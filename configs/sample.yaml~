@@ -1,0 +1,31 @@
+Threads: 20
+Respect_robots_file: On
+Verbose: Off
+Botname: 'Yandex'
+Sitemap_file: sitemap.txt
+Sitemap_dir: ./sitemaps/
+PageStore: ./raw_data/
+Host: http://www.example.com/
+Skip: /(sample|sample2)/
+Protocol: http 
+LogFormat: "#{datetime}:#{severity}:#{msg}"
+LogFile: ./logs/
+Prefix: /\w+\/\d+/
+min_range: 25
+DataPathes:
+  title:
+    path: div.title
+    range: 5
+  subtitle:
+    path: div.sub
+    range: 3 
+  company: 
+    path: div.company a
+    range: 5       
+    #replace: '/[\\r\\n\\t]+/= '
+SleepingCop: On
+Interval: 0.5    
+CacheStorage: "./cache/"
+ClientAlias: "sample"
+ReportType: json  
+id: path.split('/').last
